@@ -18,6 +18,9 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">&quot;The pizza ontology that describes various pizza based on their toppings.&quot;</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#UnclosedPizza"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Example-Margherita"/>
     </Declaration>
     <Declaration>
@@ -67,6 +70,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#DeepPanBase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonVegetarianPizza"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CheeseTopping"/>
@@ -226,6 +232,15 @@
                     </FacetRestriction>
                 </DatatypeRestriction>
             </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NonVegetarianPizza"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Pizza"/>
+            <ObjectComplementOf>
+                <Class IRI="#VegetarianPizza"/>
+            </ObjectComplementOf>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -579,6 +594,17 @@
         <Class IRI="#SeafoodTopping"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#UnclosedPizza"/>
+        <Class IRI="#NamedPizza"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnclosedPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#MozzarellaTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#VegetableTopping"/>
         <Class IRI="#PizzaTopping"/>
     </SubClassOf>
@@ -634,6 +660,10 @@
     <DisjointClasses>
         <Class IRI="#MozzarellaTopping"/>
         <Class IRI="#ParmezanTopping"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NonVegetarianPizza"/>
+        <Class IRI="#VegetarianPizza"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Pizza"/>
