@@ -18,6 +18,9 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">&quot;The pizza ontology that describes various pizza based on their toppings.&quot;</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#NamedPizza"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OliveTopping"/>
     </Declaration>
     <Declaration>
@@ -27,13 +30,16 @@
         <Class IRI="#MeatTopping"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasBase"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#ThinAndCrispyBase"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasBase"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TunaTopping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MargheritaPizza"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PepperoniTopping"/>
@@ -72,13 +78,19 @@
         <Class IRI="#PrawnTopping"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AmericanaPizza"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#DeepPanBase"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GreenPepperTopping"/>
+        <Class IRI="#AmericanHotPizza"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CheeseTopping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GreenPepperTopping"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PepperTopping"/>
@@ -102,6 +114,9 @@
         <Class IRI="#CaperTopping"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SohoPizza"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MushroomTopping"/>
     </Declaration>
     <Declaration>
@@ -116,6 +131,63 @@
     <Declaration>
         <Class IRI="#HamTopping"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#AmericanHotPizza"/>
+        <Class IRI="#NamedPizza"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanHotPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#JalapenoPepperTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanHotPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#MozzarellaTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanHotPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#PepperoniTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanHotPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#TomatoTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanaPizza"/>
+        <Class IRI="#NamedPizza"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanaPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#MozzarellaTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanaPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#PepperoniTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmericanaPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#TomatoTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnchovyTopping"/>
         <Class IRI="#SeafoodTopping"/>
@@ -145,6 +217,24 @@
         <Class IRI="#PepperTopping"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MargheritaPizza"/>
+        <Class IRI="#NamedPizza"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MargheritaPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#MozzarellaTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MargheritaPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#TomatoTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MeatTopping"/>
         <Class IRI="#PizzaTopping"/>
     </SubClassOf>
@@ -155,6 +245,10 @@
     <SubClassOf>
         <Class IRI="#MushroomTopping"/>
         <Class IRI="#VegetableTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NamedPizza"/>
+        <Class IRI="#Pizza"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OliveTopping"/>
@@ -181,6 +275,13 @@
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Pizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBase"/>
+            <Class IRI="#PizzaBase"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PrawnTopping"/>
         <Class IRI="#SeafoodTopping"/>
     </SubClassOf>
@@ -195,6 +296,38 @@
     <SubClassOf>
         <Class IRI="#SeafoodTopping"/>
         <Class IRI="#PizzaTopping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SohoPizza"/>
+        <Class IRI="#NamedPizza"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SohoPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#MozzarellaTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SohoPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#OliveTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SohoPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#ParmezanTopping"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SohoPizza"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTopping"/>
+            <Class IRI="#TomatoTopping"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpicyBeefTopping"/>
@@ -216,6 +349,12 @@
         <Class IRI="#VegetableTopping"/>
         <Class IRI="#PizzaTopping"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AmericanHotPizza"/>
+        <Class IRI="#AmericanaPizza"/>
+        <Class IRI="#MargheritaPizza"/>
+        <Class IRI="#SohoPizza"/>
+    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#AnchovyTopping"/>
         <Class IRI="#PrawnTopping"/>
@@ -328,6 +467,26 @@
         <ObjectProperty IRI="#isToppingOf"/>
         <Class IRI="#Pizza"/>
     </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AmericanHotPizza</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A pizza that only has Mozerella and Tomato toppings</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AmericanaPizza</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A pizza that only has Mozerella and Tomato toppings</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MargheritaPizza</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A pizza that only has Mozerella and Tomato toppings</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SohoPizza</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A pizza that only has Mozerella and Tomato toppings</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
