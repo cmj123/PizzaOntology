@@ -60,6 +60,9 @@
         <Class IRI="#PizzaTopping"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#England"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OnionTopping"/>
     </Declaration>
     <Declaration>
@@ -69,10 +72,16 @@
         <Class IRI="#MozzarellaTopping"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Germany"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#DeepPanBase"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NonVegetarianPizza"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Country"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CheeseTopping"/>
@@ -111,6 +120,9 @@
         <Class IRI="#TomatoTopping"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#America"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#QuattroFormaggio"/>
     </Declaration>
     <Declaration>
@@ -127,6 +139,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="#MeatTopping"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#France"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Italy"/>
     </Declaration>
     <Declaration>
         <Class IRI="#JalapenoPepperTopping"/>
@@ -671,8 +689,28 @@
         <Class IRI="#PizzaTopping"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#America"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#England"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#MargheritaPizza"/>
         <NamedIndividual IRI="#Example-Margherita"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#France"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Italy"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#AmericanHotPizza"/>
