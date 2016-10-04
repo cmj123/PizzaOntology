@@ -217,6 +217,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Country"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#France"/>
+            <NamedIndividual IRI="#Germany"/>
+            <NamedIndividual IRI="#England"/>
+            <NamedIndividual IRI="#Italy"/>
+            <NamedIndividual IRI="#America"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#HighCaloriesPizza"/>
         <ObjectIntersectionOf>
             <Class IRI="#Pizza"/>
