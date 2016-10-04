@@ -18,6 +18,9 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">&quot;The pizza ontology that describes various pizza based on their toppings.&quot;</Literal>
     </Annotation>
     <Declaration>
+        <NamedIndividual IRI="#Example-Margherita"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OliveTopping"/>
     </Declaration>
     <Declaration>
@@ -36,10 +39,10 @@
         <Class IRI="#TunaTopping"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Hot"/>
+        <Class IRI="#PepperoniTopping"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PepperoniTopping"/>
+        <Class IRI="#Hot"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MargheritaPizza"/>
@@ -57,6 +60,9 @@
         <Class IRI="#OnionTopping"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#HighCaloriesPizza"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MozzarellaTopping"/>
     </Declaration>
     <Declaration>
@@ -64,6 +70,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#CheeseTopping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowCaloriesPizza"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PepperTopping"/>
@@ -81,6 +90,9 @@
         <Class IRI="#AnchovyTopping"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasCalorificContentValue"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isBaseOf"/>
     </Declaration>
     <Declaration>
@@ -91,6 +103,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#TomatoTopping"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#QuattroFormaggio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NamedPizza"/>
@@ -150,13 +165,13 @@
         <ObjectProperty IRI="#hasSpiciness"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MushroomTopping"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PizzaBase"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SohoPizza"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MushroomTopping"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SalamiTopping"/>
@@ -175,12 +190,42 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#HighCaloriesPizza"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Pizza"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasCalorificContentValue"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">400</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#InterestingPizza"/>
         <ObjectIntersectionOf>
             <Class IRI="#Pizza"/>
             <ObjectMinCardinality cardinality="3">
                 <ObjectProperty IRI="#hasTopping"/>
             </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LowCaloriesPizza"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Pizza"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasCalorificContentValue"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">400</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -440,6 +485,13 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Pizza"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasCalorificContentValue"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PrawnTopping"/>
         <Class IRI="#SeafoodTopping"/>
     </SubClassOf>
@@ -571,6 +623,10 @@
         <Class IRI="#SpicyBeefTopping"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#HighCaloriesPizza"/>
+        <Class IRI="#LowCaloriesPizza"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Hot"/>
         <Class IRI="#Medium"/>
         <Class IRI="#Mild"/>
@@ -584,6 +640,24 @@
         <Class IRI="#PizzaBase"/>
         <Class IRI="#PizzaTopping"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#MargheritaPizza"/>
+        <NamedIndividual IRI="#Example-Margherita"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AmericanHotPizza"/>
+        <NamedIndividual IRI="#QuattroFormaggio"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCalorificContentValue"/>
+        <NamedIndividual IRI="#Example-Margherita"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">263</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCalorificContentValue"/>
+        <NamedIndividual IRI="#QuattroFormaggio"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">723</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasBase"/>
         <ObjectProperty IRI="#hasIngredient"/>
@@ -660,6 +734,9 @@
         <ObjectProperty IRI="#isToppingOf"/>
         <Class IRI="#Pizza"/>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasCalorificContentValue"/>
+    </FunctionalDataProperty>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#AmericanHotPizza</IRI>
